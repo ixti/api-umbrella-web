@@ -325,7 +325,7 @@ Admin.APIUmbrellaRESTAdapter = Ember.RESTAdapter.extend({
       type: method,
       dataType: 'json',
       headers: {
-        'X-Api-Key': webAdminAjaxApiKey
+        '<%= ApiUmbrellaConfig.gatekeeper.api_key_header_name %>': webAdminAjaxApiKey
       }
     };
   }
@@ -333,7 +333,7 @@ Admin.APIUmbrellaRESTAdapter = Ember.RESTAdapter.extend({
 
 $.ajaxPrefilter(function(options) {
   options.headers = options.headers || {};
-  options.headers['X-Api-Key'] = webAdminAjaxApiKey;
+  options.headers['<%= ApiUmbrellaConfig.gatekeeper.api_key_header_name %>'] = webAdminAjaxApiKey;
 });
 
 // DataTables plugin to programmatically show the processing indidicator.

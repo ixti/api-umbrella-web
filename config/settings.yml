@@ -39,3 +39,5 @@ web:
       host: example.com
 site_name: API Umbrella
 default_host: localhost
+gatekeeper:
+  api_key_header_name: "X-Api-Key"
